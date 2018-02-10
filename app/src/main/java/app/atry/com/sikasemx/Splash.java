@@ -13,6 +13,7 @@ private static int SPLASH_TIME_OUT= 4000;
 //        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

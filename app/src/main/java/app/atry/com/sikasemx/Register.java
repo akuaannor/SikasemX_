@@ -1,31 +1,29 @@
 package app.atry.com.sikasemx;
 
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.util.Log;
 
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-//import com.google.firebase.database.FirebaseDatabase;
-//import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 
 public class Register extends AppCompatActivity implements View.OnClickListener{
-//    private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
-//    private FirebaseDatabase database;
+    private FirebaseDatabase database;
     private TextView email;
     private EditText password;
     private Button register;
@@ -34,8 +32,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        register = (Button) findViewById(R.id.email_register_button);
+database = FirebaseDatabase.getInstance();
+        register = (Button) findViewById(R.id.email_sign_up_button);
         register.setOnClickListener(this);
 
     }
@@ -73,14 +71,14 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     }
 
 
-    public void createOrganizationClick(View view){
+    public void createUserClick(View view){
         createNewUser();
     }
 
     @Override
     public void onClick(View view) {
         //Method to register new user
-
+createNewUser();
         //On Success, open Parent Activity
     }
 

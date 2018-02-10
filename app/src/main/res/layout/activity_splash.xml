@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:opacity="opaque"
-    tools:context=".Splash">
+    android:layout_height="fill_parent">
 
-    <item android:drawable="@color/white"/>
-    <item>
-        <bitmap
-            android:gravity="center"
-            android:src="@drawable/splash"/>
-    </item>
+    <ImageView android:id="@+id/splash"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:src="@drawable/splash"
+        android:layout_gravity="center"/>
 
-    <!--<ImageView android:id="@+id/splashscreen" android:layout_width="wrap_content"-->
-    <!--android:layout_height="fill_parent"-->
-    <!--android:src="@drawable/splash"-->
-    <!--android:layout_gravity="center"/>-->
-
-</RelativeLayout>
+</LinearLayout>
 

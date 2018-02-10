@@ -69,6 +69,37 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         mAuth = FirebaseAuth.getInstance();
     }
 
+    //method to create a new user
+    public void createNewUser(){
+        email = (EditText) findViewById(R.id.email);
+        password = (EditText) findViewById(R.id.password);
+        String emailstr = password.getText().toString();
+        String passwordstr  = email.getText().toString();
+
+        mAuth.createUserWithEmailAndPassword(emailstr, passwordstr)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "createUserWithEmail:success");
+                            Toast.makeText(Login.this,"Organization has been created",Toast.LENGTH_SHORT).show();
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(Login.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+
+                        // ...
+                    }
+                });
+    }
+
+
     @Override
     public void onClick(View view) {
         int id = view.getId();
@@ -97,7 +128,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG  = "Login";
 
 
-    public void login(){
+    public void login(View view){
         email = (EditText) findViewById(R.id.email);
         password = findViewById(R.id.password);
         String emailstr = email.getText().toString();
@@ -122,6 +153,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         // ...
                     }
                 });
+    }
+
+    public void signup(View view){
+        Intent intent = new Intent(Login.this, Register.class);
+        startActivity(intent);
     }
 
   public void getCurrentUser(){
