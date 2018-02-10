@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="white"
+    android:background="@android:color/background_light"
     tools:context="app.atry.com.sikasemx.Login">
 
 
@@ -26,7 +26,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="29dp"
         android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/icons8-user-50"
+        android:drawableLeft="@drawable/icons8_user_50"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textPersonName"
@@ -39,7 +39,7 @@
         android:layout_alignStart="@+id/email"
         android:layout_centerVertical="true"
         android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/icons8-lock-50"
+        android:drawableLeft="@drawable/icons8_lock_50"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"

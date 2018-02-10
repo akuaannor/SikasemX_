@@ -15,15 +15,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
 
 
 
 public class Register extends AppCompatActivity implements View.OnClickListener{
-    private DatabaseReference mDatabase;
+//    private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
-    private FirebaseDatabase database;
+//    private FirebaseDatabase database;
     private TextView email;
     private EditText password;
     private Button register;
@@ -32,7 +32,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-database = FirebaseDatabase.getInstance();
+//database = FirebaseDatabase.getInstance();
         register = (Button) findViewById(R.id.email_sign_up_button);
         register.setOnClickListener(this);
 
