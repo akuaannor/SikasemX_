@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         login.setOnClickListener(this);
         register.setOnClickListener(this);
-        mAuth = FirebaseAuth.getInstance();
+//        mAuth = FirebaseAuth.getInstance();
     }
 
     //method to create a new user
